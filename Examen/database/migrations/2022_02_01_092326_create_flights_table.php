@@ -20,7 +20,10 @@ class CreateFlightsTable extends Migration
             $table->string("origin");
             $table->string("destiny");
             $table->integer("available_seats");
+            $table->unsignedBigInteger('airplane_id')->nullable();
             $table->timestamps();
+            $table->foreign('airplane_id')->references('id')->on('airplanes');
+            
         });
     }
 

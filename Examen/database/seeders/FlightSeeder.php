@@ -29,6 +29,7 @@ class FlightSeeder extends Seeder
                 'origin' => $origins[random_int(0, 9)],
                 'destiny' => $destinies[random_int(0, 9)],
                 'available_seats' => random_int(0, 250),
+                'airplane_id' => null,
             ]);
         }
     }

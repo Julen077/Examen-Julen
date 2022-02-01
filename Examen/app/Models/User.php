@@ -25,6 +25,7 @@ class User extends Authenticatable
         'nif',
         'date_of_birth',
         'gender',
+        'rol',
     ];
 
 

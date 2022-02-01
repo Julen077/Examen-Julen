@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'enunciado');
 
+Route::get('/admin', [App\Http\Controllers\ControladorAdmin::class, 'mostrar']);
 
+Route::get('/admin/asignarVuelo', [App\Http\Controllers\ControladorAdmin::class, 'asignarVuelo']);
+
+Route::post('/admin/asignarVuelo', [App\Http\Controllers\ControladorAdmin::class, 'escogerVueloyAvion'])->name('escogerVueloyAvion');
+
+Route::delete('/admin/asignarVuelo/{id}', [App\Http\Controllers\ControladorAdmin::class, 'eliminarSeleccion'])->name('ruta_para_eliminar');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
